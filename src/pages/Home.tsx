@@ -31,7 +31,7 @@ export default function Home() {
             style={{
               background: 'rgba(250, 249, 246, 0.97)',
               borderRadius: 'var(--radius-xl)',
-              padding: '48px 60px',
+              padding: 'clamp(28px, 5vw, 48px) clamp(24px, 6vw, 60px)',
               boxShadow: 'var(--shadow-lg)',
               border: '1px solid hsla(0, 0%, 0%, 0.06)'
             }}
@@ -143,7 +143,7 @@ export default function Home() {
       {/* Shop */}
       <section id="shop" className="section bg-cream">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 64px)' }}>
             <p className="text-accent" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
               Collection
             </p>
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="container">
           <div
             className="card"
-            style={{ textAlign: 'center', padding: '60px 40px', maxWidth: '600px', margin: '0 auto' }}
+            style={{ textAlign: 'center', padding: 'clamp(32px, 6vw, 60px) clamp(20px, 5vw, 40px)', maxWidth: '600px', margin: '0 auto' }}
           >
             <p className="text-accent" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '12px' }}>
               READY TO START?

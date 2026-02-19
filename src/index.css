@@ -441,12 +441,76 @@ body {
   }
 }
 
-/* Product modal — stack on mobile */
-@media (max-width: 767px) {
-  .product-modal-card > div {
-    grid-template-columns: 1fr !important;
+/* Contact form — responsive name/email grid */
+.form-name-email {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .form-name-email {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Product modal — responsive grid */
+.product-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+  .product-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
   .product-modal-card {
     overflow-y: auto !important;
+    max-height: 85vh !important;
+  }
+}
+
+/* Mobile refinements */
+@media (max-width: 639px) {
+  .heading-xl {
+    font-size: clamp(32px, 8vw, 40px);
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+}
+
+/* Nav logo */
+.nav-logo {
+  height: 56px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .nav-logo {
+    height: 72px;
+  }
+}
+
+/* Footer logo */
+.footer-logo {
+  height: 60px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .footer-logo {
+    height: 80px;
   }
 }

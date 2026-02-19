@@ -57,7 +57,7 @@ export default function CategoryDetail() {
 
     return (
         <>
-            <section className="section" style={{ paddingTop: '140px' }}>
+            <section className="section" style={{ paddingTop: 'clamp(100px, 12vw, 140px)' }}>
                 <div className="container">
                     <div style={{ marginBottom: '48px' }}>
                         <Link to="/" className="text-accent" style={{ fontSize: '14px', fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
@@ -167,7 +167,7 @@ function ProductModal({ product, onClose }: {
                     >
                         ✕
                     </button>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', height: '100%' }}>
+                    <div className="product-modal-grid">
                         <div style={{ position: 'relative', overflow: 'hidden' }}>
                             <img
                                 src={product.image}

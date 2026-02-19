@@ -49,11 +49,11 @@ function Layout({ children }: { children: React.ReactNode }) {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
             {/* Logo - bigger */}
             <Link to="/">
-              <img src="/images/hero/logo.png" alt="Central Texas with Love" style={{ height: '72px', width: 'auto' }} />
+              <img src="/images/hero/logo.png" alt="Central Texas with Love" className="nav-logo" />
             </Link>
 
             {/* Desktop Nav - centered */}
-            <nav className="hidden lg:flex" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: '40px' }}>
+            <nav className="hidden lg:flex" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', alignItems: 'center', gap: '40px' }}>
               {navItems.map((item) => (
                 item.href.startsWith('/') && !item.href.includes('#') ? (
                   <Link
@@ -132,7 +132,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   )
                 ))}
-                <Link to="/contact" className="btn-primary inline-block mt-4">
+                <Link to="/contact" className="btn-primary inline-block mt-4" onClick={() => setMenuOpen(false)}>
                   Get In Touch
                 </Link>
               </div>
@@ -148,7 +148,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <footer style={{ backgroundColor: 'var(--color-forest)', padding: '48px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '24px' }}>
-            <img src="/images/hero/logo.png" alt="Central Texas with Love" style={{ height: '80px', width: 'auto' }} />
+            <img src="/images/hero/logo.png" alt="Central Texas with Love" className="footer-logo" />
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
               © {new Date().getFullYear()} Central Texas with Love · Handcrafted in Austin, Texas
             </p>

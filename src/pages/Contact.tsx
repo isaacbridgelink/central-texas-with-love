@@ -94,7 +94,7 @@ export default function Contact() {
               <div className="card" style={{ padding: '32px' }}>
                 <h2 className="heading-md" style={{ marginBottom: '28px' }}>Send a Message</h2>
                 <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="form-name-email" style={{ display: 'grid', gap: '16px' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, marginBottom: '8px' }}>Name</label>
                       <input type="text" placeholder="Your name" className="input" />

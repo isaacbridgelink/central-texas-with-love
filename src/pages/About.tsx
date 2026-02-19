@@ -8,7 +8,7 @@ export default function About() {
   })
 
   return (
-    <div style={{ paddingTop: '100px' }}>
+    <div style={{ paddingTop: 'clamp(80px, 10vw, 100px)' }}>
       {/* Hero */}
       <section className="section">
         <div className="container">
