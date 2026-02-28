@@ -29,9 +29,24 @@ export function useProducts(): UseProductsResult {
       .then((data: Array<Product & { featured?: boolean }>) => {
         if (!Array.isArray(data) || data.length === 0) return
 
-        setProducts(data)
-        const ids = new Set(data.filter((p) => p.featured).map((p) => p.id))
-        if (ids.size > 0) setFeaturedIds(ids)
+        // Names of non-sold products from Airtable
+        const nonSoldNames = new Set(data.map((p) => p.name))
+        // Names of products that exist in the static list
+        const staticNames = new Set(fallbackProducts.map((p) => p.name))
+
+        // Keep static products (with their local images) that aren't sold
+        const filteredStatic = fallbackProducts.filter((p) => nonSoldNames.has(p.name))
+
+        // Add brand-new products Evans added to Airtable (with their uploaded images)
+        const newProducts = data.filter((p) => !staticNames.has(p.name))
+
+        const merged = [...filteredStatic, ...newProducts]
+        setProducts(merged)
+
+        // Featured: use Airtable's featured flag, fall back to defaults
+        const featuredNames = new Set(data.filter((p) => p.featured).map((p) => p.name))
+        const featuredFromAirtable = new Set(merged.filter((p) => featuredNames.has(p.name)).map((p) => p.id))
+        if (featuredFromAirtable.size > 0) setFeaturedIds(featuredFromAirtable)
       })
       .catch((err) => {
         if (err.name !== 'AbortError') {
