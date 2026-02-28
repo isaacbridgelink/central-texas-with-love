@@ -175,11 +175,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <div style={{ textAlign: 'center', marginTop: '48px' }}>
-            <Link to="/featured" className="btn-secondary">
-              View All Featured Pieces
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -239,7 +234,7 @@ function ProductModal({ product, onClose }: {
         className="modal-wrapper"
         style={{ position: 'fixed', inset: '20px', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
-        <div className="card product-modal-card" style={{ position: 'relative', width: '100%', maxWidth: '720px', maxHeight: '90vh', overflow: 'hidden', padding: 0 }}>
+        <div className="card product-modal-card" style={{ position: 'relative', width: '100%', maxWidth: '720px', maxHeight: '90vh', overflowY: 'auto', padding: 0 }}>
           <button
             onClick={onClose}
             style={{ position: 'absolute', top: '12px', right: '12px', width: '36px', height: '36px', borderRadius: '50%', background: 'white', border: 'none', cursor: 'pointer', zIndex: 10, boxShadow: '0 2px 8px rgba(0,0,0,0.1)', fontSize: '14px' }}
@@ -253,7 +248,7 @@ function ProductModal({ product, onClose }: {
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
-          <div className="modal-details">
+          <div className="modal-details" style={{ paddingBottom: '28px' }}>
             <div>
               <p className="text-accent" style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '4px' }}>
                 {product.category.toUpperCase()}
